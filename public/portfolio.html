@@ -1,0 +1,1444 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rajan Maheshwari · Developer Portfolio</title>
+<meta name="description" content="Portfolio of Rajan Maheshwari – Full-stack and Android developer building calm, fast web apps, mobile systems, and AI tools.">
+<meta name="author" content="Rajan Maheshwari">
+<meta property="og:title" content="Rajan Maheshwari · Developer Portfolio">
+<meta property="og:description" content="Full-stack and Android developer building calm, fast web apps, mobile systems, and AI tools.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rajan Maheshwari Portfolio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rajan Maheshwari · Developer Portfolio">
+<meta name="twitter:description" content="Full-stack and Android developer building calm, fast web apps, mobile systems, and AI tools.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%2322d3ee'/><stop offset='35%25' stop-color='%237c5cff'/><stop offset='70%25' stop-color='%23ff4d8d'/><stop offset='100%25' stop-color='%23ffb02e'/></linearGradient></defs><circle cx='50' cy='50' r='46' fill='%2307060d' stroke='url(%23g)' stroke-width='6'/><circle cx='50' cy='50' r='18' fill='url(%23g)'/></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rajan Maheshwari",
+  "alternateName": "Rajan Vinzoda",
+  "email": "vinzodarajan@gmail.com",
+  "jobTitle": "Full-Stack & Android Software Developer",
+  "description": "Developer building calm, fast web apps, mobile systems, and AI tools.",
+  "sameAs": [
+    "https://github.com/rajanvinzoda",
+    "https://www.linkedin.com/in/rajan-maheshwari-6372582a7",
+    "mailto:vinzodarajan@gmail.com"
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#07060d;--fg:#f5f3ff;--mute:#a7a3c0;--line:rgba(255,255,255,.12);--card:#110f1c;
+  --p1:#7c5cff;--p2:#ff4d8d;--p3:#ffb02e;--p4:#22d3ee;--p5:#a3e635;
+  --grad:linear-gradient(100deg,var(--p4),var(--p1),var(--p2),var(--p3),var(--p4));
+  --f:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  color-scheme:dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px)
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(75px + env(safe-area-inset-top,0px));background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f);line-height:1.5;overflow-x:hidden}
+body:not(.ready){overflow:hidden}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font-family:inherit}
+::selection{background:var(--p2);color:#fff}
+
+@property --angle{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes spin{to{--angle:360deg}}
+@keyframes flow{to{background-position:300% 0}}
+@keyframes flt{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(6vw,-5vh) scale(1.2)}}
+@keyframes dot{0%,80%,100%{opacity:.25}40%{opacity:1}}
+@keyframes breathe{0%,100%{box-shadow:0 18px 50px -14px rgba(124,92,255,.55)}50%{box-shadow:0 18px 70px -8px rgba(255,77,141,.6)}}
+@keyframes rp{to{transform:scale(4);opacity:0}}
+@keyframes pop{0%{transform:translate(-50%,30px) scale(.8);opacity:0}15%,85%{transform:translate(-50%,0) scale(1);opacity:1}100%{transform:translate(-50%,-10px);opacity:0}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+@keyframes spin2{to{transform:rotate(360deg)}}
+@keyframes border-beam{100%{offset-distance:100%}}
+@keyframes meteor-effect{0%{transform:rotate(215deg) translateX(0);opacity:1}70%{opacity:1}100%{transform:rotate(215deg) translateX(-650px);opacity:0}}
+
+/* background + ambient lighting */
+.bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;transition:filter .2s}
+.bg i{position:absolute;width:46vw;height:46vw;border-radius:50%;filter:blur(90px);opacity:.42;animation:flt 16s ease-in-out infinite;will-change:transform}
+.bg i:nth-child(1){left:-8vw;top:-6vw;background:var(--p1)}
+.bg i:nth-child(2){right:-10vw;top:20vh;background:var(--p2);animation-delay:-5s}
+.bg i:nth-child(3){left:20vw;bottom:-16vw;background:var(--p4);animation-delay:-9s}
+.bg i:nth-child(4){right:10vw;bottom:-10vw;width:30vw;height:30vw;background:var(--p3);animation-delay:-3s;opacity:.3}
+#fx{position:fixed;inset:0;z-index:60;pointer-events:none}
+#bar{position:fixed;left:0;top:0;height:3px;width:100%;z-index:70;background:var(--grad);background-size:300% 100%;animation:flow 6s linear infinite;transform-origin:0 50%;transform:scaleX(0)}
+
+/* meteors */
+.meteors-container{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.meteor{position:absolute;top:0;height:2px;width:2px;border-radius:999px;background:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.1);animation:meteor-effect 5s linear infinite;rotate:215deg}
+.meteor::before{content:"";position:absolute;top:50%;transform:translateY(-50%);width:60px;height:1px;background:linear-gradient(to right,var(--p4),var(--p1),transparent)}
+
+/* custom cursor */
+.cur,.ring{position:fixed;left:0;top:0;z-index:80;pointer-events:none;display:none}
+@media (pointer:fine){body,a,button,input{cursor:none}.cur,.ring{display:grid}}
+.cur{width:8px;height:8px;margin:-4px;border-radius:50%;background:#fff}
+.ring{width:38px;height:38px;margin:-19px;border-radius:50%;place-items:center;border:1.5px solid rgba(255,255,255,.6);mix-blend-mode:difference;transition:width .3s,height .3s,margin .3s,background .3s,border-color .3s;font-size:11px;font-weight:600;color:#000}
+.ring.big{width:74px;height:74px;margin:-37px;background:#fff}
+.ring.dn{width:24px;height:24px;margin:-12px}
+
+/* loader */
+#ld{position:fixed;inset:0;z-index:90;background:#07060d;display:grid;place-items:center;transition:transform .9s cubic-bezier(.76,0,.24,1);will-change:transform}
+#ld.done{transform:translateY(-101%)}
+#ln{font-size:clamp(80px,22vw,240px);font-weight:800;letter-spacing:-.06em;line-height:1;background:var(--grad);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 3s linear infinite}
+#lb{position:absolute;left:0;bottom:0;height:5px;width:100%;background:var(--grad);transform-origin:0 50%;transform:scaleX(0)}
+
+/* header */
+header{position:fixed;left:0;right:0;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:calc(14px + env(safe-area-inset-top,0px)) clamp(14px,4vw,48px) 0;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+header.hide{transform:translateY(-130%)}
+.wordmark{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.03em;font-size:18px;white-space:nowrap}
+.wordmark-dot{width:10px;height:10px;border-radius:50%;background:var(--grad);background-size:300% 100%;animation:flow 3s linear infinite,bob 2s ease-in-out infinite}
+nav{position:relative;display:flex;padding:3px;border-radius:99px;background:rgba(20,17,36,.65);border:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+nav a{position:relative;z-index:1;padding:8px 16px;font-size:13px;font-weight:600;border-radius:99px;color:var(--mute);transition:color .2s}
+nav a.on,nav a:hover{color:#0a0814}
+#ind{position:absolute;left:0;top:3px;bottom:3px;width:0;border-radius:99px;background:var(--grad);background-size:300% 100%;animation:flow 5s linear infinite;opacity:0;transition:transform .4s cubic-bezier(.34,1.4,.64,1),width .4s cubic-bezier(.34,1.4,.64,1),opacity .3s;pointer-events:none}
+.header-actions{display:flex;align-items:center;gap:8px}
+.cmd-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:99px;font-family:var(--mono);font-size:11px;font-weight:700;color:var(--mute);background:rgba(255,255,255,.05);border:1px solid var(--line);cursor:pointer;transition:all .2s}
+.cmd-btn:hover{background:rgba(255,255,255,.12);color:#fff}
+.cmd-btn b{color:var(--p4)}
+.cta-btn{padding:8px 18px;border-radius:99px;border:0;font-size:13px;font-weight:700;color:#0a0814;background:var(--grad);background-size:300% 100%;animation:flow 4s linear infinite;cursor:pointer;transition:transform .2s}
+.cta-btn:hover{transform:scale(1.05)}
+
+/* hero */
+main{position:relative;z-index:2}
+.hero{position:relative;min-height:92svh;display:flex;flex-direction:column;justify-content:center;padding:120px clamp(18px,4vw,48px) 60px;overflow:hidden}
+#orb{position:absolute;right:-6vw;top:50%;width:min(80vw,720px);aspect-ratio:1;transform:translateY(-50%);pointer-events:none;opacity:.9}
+.status-pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:99px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);font-size:12px;font-weight:600;color:var(--p4);width:fit-content;margin-bottom:24px}
+.status-pill i{width:8px;height:8px;border-radius:50%;background:var(--p4);box-shadow:0 0 10px var(--p4);animation:dot 1.2s infinite}
+h1{position:relative;margin:0;font-size:clamp(40px,7.5vw,104px);line-height:.98;letter-spacing:-.045em;font-weight:800;max-width:13em;user-select:none}
+.wd{display:inline-block;white-space:nowrap;margin-right:.25em}
+.c{display:inline-block;opacity:0;transform:translateY(60%) rotate(10deg);filter:blur(10px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1),filter .8s cubic-bezier(.22,1,.36,1);will-change:transform}
+.ready .c{opacity:1;transform:none;filter:none}
+h1.live .c{transition:none}
+.sub{position:relative;max-width:34em;margin:28px 0 0;color:var(--mute);font-size:clamp(16px,1.5vw,20px);line-height:1.6}
+.hero-acts{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:32px}
+.hero-acts a{padding:10px 22px;border-radius:99px;font-size:14px;font-weight:700;transition:all .2s}
+.hero-acts .primary{background:var(--grad);background-size:300% 100%;color:#0a0814;animation:flow 4s linear infinite}
+.hero-acts .primary:hover{transform:scale(1.05)}
+.hero-acts .secondary{background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--fg)}
+.hero-acts .secondary:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+.hint{position:absolute;left:clamp(18px,4vw,48px);bottom:calc(24px + env(safe-area-inset-bottom,0px));font-size:12px;color:rgba(167,163,192,.8)}
+.scr{position:absolute;right:clamp(18px,4vw,48px);bottom:calc(24px + env(safe-area-inset-bottom,0px));width:22px;height:36px;border:1.5px solid rgba(167,163,192,.6);border-radius:12px;display:flex;justify-content:center;padding-top:7px}
+.scr i{width:4px;height:7px;border-radius:2px;background:var(--p4);animation:bob 1.4s ease-in-out infinite}
+
+/* marquee */
+.marq{overflow:hidden;white-space:nowrap;padding:18px 0;position:relative;z-index:2;user-select:none;pointer-events:none}
+.mq{display:inline-flex;gap:48px;padding-right:48px;font-size:clamp(30px,5vw,76px);font-weight:800;letter-spacing:-.04em;will-change:transform}
+.mq i{font-style:normal;color:var(--p2);display:inline-block;animation:spin2 6s linear infinite}
+.m2 .mq{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.4)}
+.m2 .mq i{-webkit-text-stroke:0;color:var(--p4)}
+
+/* sections general */
+section{position:relative;padding:clamp(60px,10vw,120px) clamp(18px,4vw,48px)}
+.hd{margin:0 0 36px;overflow:hidden}
+.hd span{display:block;font-size:clamp(36px,7vw,92px);font-weight:800;letter-spacing:-.045em;line-height:1;background:var(--grad);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 7s linear infinite;transform:translateY(110%) skewY(6deg);transition:transform 1s cubic-bezier(.22,1,.36,1)}
+.hd.on span{transform:none}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p4);display:block;margin-bottom:8px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:24px;margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08)}
+.stat b{display:block;font-size:clamp(44px,6vw,76px);font-weight:800;letter-spacing:-.05em;line-height:1;background:var(--grad);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 6s linear infinite}
+.stat span{color:var(--mute);font-size:14px;font-weight:500;margin-top:4px;display:block}
+.stat::after{content:"";display:block;height:3px;margin-top:12px;border-radius:3px;background:var(--grad);transform:scaleX(0);transform-origin:0 50%;transition:transform 1.2s cubic-bezier(.22,1,.36,1) .2s}
+.stat.on::after{transform:scaleX(1)}
+
+/* project filter tabs & actions */
+.filter-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-bottom:32px}
+.tab-pills{display:flex;flex-wrap:wrap;gap:6px;padding:4px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.tab-pills button{padding:6px 14px;border-radius:12px;border:0;font-size:12px;font-weight:600;color:var(--mute);background:none;cursor:pointer;transition:all .2s}
+.tab-pills button.on{background:var(--grad);background-size:300% 100%;color:#0a0814;animation:flow 4s linear infinite}
+.repo-btn{padding:8px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:var(--mute);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s}
+.repo-btn.on{border-color:var(--p1);background:rgba(124,92,255,.2);color:var(--p4)}
+
+/* live repos accordion */
+#repos-panel{display:none;margin-bottom:36px;padding:24px;border-radius:24px;background:rgba(17,15,28,.8);border:1px solid var(--line);backdrop-filter:blur(10px)}
+#repos-panel.open{display:block}
+.repos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px;margin-top:16px}
+.repo-card{padding:16px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);transition:all .2s;display:flex;flex-direction:column;justify-content:space-between}
+.repo-card:hover{background:rgba(255,255,255,.07);border-color:var(--p4);transform:translateY(-2px)}
+.repo-card h4{margin:0 0 6px;font-size:15px;color:var(--fg);display:flex;justify-content:space-between}
+.repo-card p{margin:0 0 12px;font-size:12px;color:var(--mute);line-height:1.4}
+.repo-meta{display:flex;justify-content:space-between;font-size:11px;color:var(--mute);padding-top:8px;border-top:1px solid rgba(255,255,255,.06)}
+
+/* cards grid & 3d tilt */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px}
+.card{position:relative;display:flex;flex-direction:column;min-height:450px;border-radius:28px;background:var(--card);border:1px solid var(--line);overflow:hidden;will-change:transform;cursor:pointer;transition:transform .25s ease-out,box-shadow .25s}
+.card:hover{box-shadow:0 20px 50px -15px rgba(124,92,255,.25)}
+.card::before{content:"";position:absolute;inset:0;z-index:3;border-radius:inherit;padding:2px;background:conic-gradient(from var(--angle),transparent 0 50%,var(--c1) 75%,var(--c2) 90%,transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);opacity:0;transition:opacity .3s;animation:spin 2.4s linear infinite;pointer-events:none}
+.card::after{content:"";position:absolute;inset:0;z-index:2;background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--c1) 25%,transparent),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover::before,.card:hover::after{opacity:1}
+.art{position:relative;height:200px;overflow:hidden;background:linear-gradient(135deg,var(--c1),var(--c2))}
+.art i{position:absolute;border-radius:50%;filter:blur(18px);animation:flt 7s ease-in-out infinite}
+.art i:nth-child(1){width:60%;height:120%;left:-10%;top:-30%;background:var(--c3);opacity:.8}
+.art i:nth-child(2){width:50%;height:100%;right:-8%;top:20%;background:var(--c2);animation-delay:-3s;opacity:.9}
+.art i:nth-child(3){width:34%;height:70%;left:38%;top:-20%;background:#fff;opacity:.35;animation-delay:-5s}
+.card:hover .art i{animation-duration:2.5s}
+.card .n{position:absolute;right:18px;top:12px;z-index:1;font-weight:800;font-size:44px;color:rgba(255,255,255,.85);letter-spacing:-.04em}
+.card .cat-badge{position:absolute;left:18px;bottom:14px;z-index:1;padding:4px 12px;border-radius:99px;background:rgba(0,0,0,.45);backdrop-filter:blur(8px);font-size:11px;font-weight:700;text-transform:uppercase;color:#fff}
+.body{position:relative;z-index:1;padding:24px;display:flex;flex-direction:column;flex:1;justify-content:space-between}
+.card h3{margin:0 0 8px;font-size:clamp(24px,2.5vw,32px);letter-spacing:-.035em;line-height:1.1;transition:color .2s}
+.card:hover h3{color:var(--p4)}
+.card p{margin:0;color:var(--mute);font-size:14px;line-height:1.5}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06)}
+.tags span{font-size:11px;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:var(--mute);transition:all .2s}
+.card:hover .tags span{border-color:var(--c1);color:#fff}
+.card-cta{display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding-top:12px;font-size:12px;font-weight:600;color:var(--mute)}
+.card:hover .card-cta span{color:var(--p4)}
+
+/* tech stack section - clean categorized cards (no graphs) */
+.stack-grid{display:grid;grid-template-columns:1fr;gap:32px}
+@media (min-width:1024px){.stack-grid{grid-template-columns:7fr 5fr}}
+.stack-box{padding:24px;border-radius:28px;background:var(--card);border:1px solid var(--line);box-shadow:0 15px 40px -15px rgba(0,0,0,.6);margin-bottom:20px}
+.cat-hdr{display:flex;align-items:center;justify-content:space-between;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid rgba(255,255,255,.06)}
+.cat-hdr h4{margin:0;font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.cat-dot{width:10px;height:10px;border-radius:50%}
+
+/* clean skill cards grid */
+.skills-cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.skill-card{padding:14px 16px;border-radius:18px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);transition:all .25s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;justify-content:space-between}
+.skill-card:hover{background:rgba(255,255,255,.05);border-color:var(--skill-accent, var(--p4));transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(0,0,0,.5)}
+.skill-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+.skill-title{font-size:14px;font-weight:700;color:#fff}
+.skill-badge{font-size:10px;font-family:var(--mono);font-weight:600;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--mute);letter-spacing:0.02em}
+.skill-desc{font-size:12px;color:var(--mute);line-height:1.45;margin:0}
+
+/* milestones timeline */
+.timeline{position:relative;padding-left:24px;border-left:1px solid rgba(255,255,255,.15);margin-top:16px}
+.tl-item{position:relative;margin-bottom:28px}
+.tl-dot{position:absolute;left:-31px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--card);border:2px solid var(--p2);transition:all .2s}
+.tl-item:hover .tl-dot{border-color:var(--p4);transform:scale(1.2)}
+.tl-yr{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--p4)}
+.tl-item h4{margin:2px 0 2px;font-size:16px;font-weight:700}
+.tl-org{font-size:12px;font-weight:600;color:var(--p3);margin:0 0 6px}
+.tl-desc{font-size:13px;color:var(--mute);margin:0;line-height:1.5}
+
+/* interactive terminal */
+.terminal{position:relative;border-radius:24px;background:#0e0c18;border:1px solid var(--line);box-shadow:0 20px 50px -15px rgba(0,0,0,.8);overflow:hidden;margin-top:36px;font-family:var(--mono);font-size:12px}
+.terminal-hdr{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.08)}
+.term-dots{display:flex;gap:6px}
+.term-dots span{width:11px;height:11px;border-radius:50%}
+.term-tabs{display:flex;gap:6px}
+.term-tabs button{padding:4px 10px;border-radius:6px;border:0;background:none;color:var(--mute);font-family:inherit;font-size:11px;cursor:pointer}
+.term-tabs button.on{background:rgba(255,255,255,.1);color:var(--p4)}
+.terminal-body{padding:18px;background:rgba(7,6,13,.85);min-height:190px;color:var(--fg);overflow-x:auto}
+.term-line{margin-bottom:6px;line-height:1.5}
+.term-comment{color:rgba(167,163,192,.6)}
+.term-prompt{color:var(--p4);font-weight:700}
+.term-success{color:var(--p5)}
+.term-form{display:flex;align-items:center;gap:8px;margin-top:10px}
+.term-input{flex:1;background:none;border:0;outline:0;color:#fff;font-family:inherit;font-size:12px}
+.term-quick{padding:10px 18px;background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);display:flex;flex-wrap:wrap;gap:8px;font-size:11px;align-items:center}
+.term-quick button{padding:3px 8px;border-radius:6px;border:0;background:rgba(255,255,255,.06);color:var(--mute);cursor:pointer;font-family:inherit}
+.term-quick button:hover{background:var(--p1);color:#fff}
+
+/* about */
+.about{margin:0;font-size:clamp(26px,4.5vw,56px);line-height:1.15;letter-spacing:-.035em;font-weight:600;max-width:22em}
+.about span{opacity:.16;transition:opacity .3s,color .3s,transform .4s;display:inline-block;margin-right:.25em}
+.about span.lit{opacity:1;color:var(--wc)}
+.about span:hover{transform:translateY(-6px) rotate(-3deg)}
+
+/* contact */
+.contact{text-align:center;padding-bottom:180px}
+.contact p{color:var(--mute);margin:0 0 16px;font-size:16px}
+.mag{display:inline-block;font-size:clamp(28px,7vw,96px);font-weight:800;letter-spacing:-.045em;text-decoration:none;transition:transform .2s ease-out;overflow-wrap:anywhere;cursor:pointer}
+.mag .c2{display:inline-block;transition:transform .4s cubic-bezier(.34,1.8,.64,1),color .3s}
+.mag:hover .c2{transform:translateY(-.18em) rotate(-6deg) scale(1.1);color:var(--p3)}
+.pills{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:32px}
+.pills a,.pills button{position:relative;overflow:hidden;padding:10px 22px;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--fg);text-decoration:none;font-size:13px;font-weight:600;cursor:pointer;transition:all .3s}
+.pills a:hover,.pills button:hover{transform:translateY(-4px) scale(1.05);background:var(--grad);background-size:300% 100%;color:#0a0814;animation:flow 3s linear infinite}
+.rp{position:absolute;width:30px;height:30px;margin:-15px;border-radius:50%;background:rgba(255,255,255,.5);pointer-events:none;animation:rp .7s ease-out forwards}
+
+/* quick note form */
+#note-form{display:none;max-width:480px;margin:28px auto 0;padding:24px;border-radius:24px;background:var(--card);border:1px solid var(--line);text-align:left}
+#note-form.open{display:block}
+#note-form input,#note-form textarea{width:100%;padding:10px 12px;margin:6px 0 14px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:#fff;outline:0}
+#note-form input:focus,#note-form textarea:focus{border-color:var(--p1)}
+
+/* dock */
+.dock-wrap{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:50;display:flex;flex-direction:column;align-items:center}
+.dock{display:flex;align-items:flex-end;gap:12px;height:64px;padding:8px 16px 12px;border-radius:24px;background:rgba(17,15,28,.88);border:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 15px 40px -10px rgba(0,0,0,.8)}
+.dock-item{width:42px;height:42px;border-radius:50%;background:var(--p1);display:flex;align-items:center;justify-content:center;color:#fff;transition:width .2s,height .2s,transform .2s;cursor:pointer;flex-shrink:0}
+.dock-item:hover{width:64px;height:64px;transform:translateY(-8px);background:var(--grad);background-size:300% 100%;animation:flow 3s linear infinite;color:#0a0814}
+.dock-item svg{width:20px;height:20px;transition:transform .2s}
+.dock-item:hover svg{transform:scale(1.2)}
+.dock-ask{position:absolute;top:-10px;right:14px;padding:2px 10px;border-radius:99px;font-size:10px;font-weight:700;background:var(--grad);background-size:300% 100%;color:#0a0814;animation:flow 4s linear infinite;cursor:pointer}
+
+/* ai assistant box */
+#ai-box{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:55;width:min(460px,calc(100vw - 32px));border-radius:26px;background:rgba(17,15,28,.95);border:1px solid var(--line);backdrop-filter:blur(20px);padding:16px 20px;box-shadow:0 25px 60px rgba(0,0,0,.9);display:none}
+#ai-box.open{display:block}
+#ai-box form{display:flex;gap:10px;align-items:center}
+#ai-box input{flex:1;background:none;border:0;outline:0;color:#fff;font-size:14px}
+#ai-box button{width:36px;height:36px;border-radius:50%;border:0;background:var(--grad);color:#0a0814;font-weight:800;cursor:pointer}
+#ai-ans{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;line-height:1.5;display:none}
+#ai-ans.open{display:block}
+
+/* modal */
+#modal{position:fixed;inset:0;z-index:75;background:rgba(0,0,0,.8);backdrop-filter:blur(10px);display:none;place-items:center;padding:20px}
+#modal.open{display:grid}
+.modal-content{position:relative;width:min(640px,100%);max-height:90vh;overflow-y:auto;border-radius:28px;background:#110f1c;border:1px solid var(--line);padding:28px;color:#fff;box-shadow:0 25px 60px rgba(0,0,0,.9)}
+.modal-art{height:180px;border-radius:18px;margin-bottom:20px;display:flex;align-items:flex-end;padding:20px;position:relative;overflow:hidden}
+.modal-close{position:absolute;right:18px;top:18px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.1);color:#fff;cursor:pointer}
+
+/* command menu */
+#cmd-menu{position:fixed;inset:0;z-index:85;background:rgba(0,0,0,.75);backdrop-filter:blur(12px);display:none;justify-content:center;padding-top:14vh}
+#cmd-menu.open{display:flex}
+.cmd-box{width:min(540px,calc(100vw - 32px));max-height:480px;border-radius:22px;background:#110f1c;border:1px solid var(--line);overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.95)}
+.cmd-search{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+.cmd-search input{flex:1;background:none;border:0;outline:0;color:#fff;font-size:15px}
+.cmd-list{max-height:360px;overflow-y:auto;padding:10px}
+.cmd-item{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:12px;font-size:13px;font-weight:600;color:var(--fg);cursor:pointer;transition:background .2s}
+.cmd-item:hover{background:rgba(255,255,255,.08);color:var(--p4)}
+
+/* live edit drawer */
+#pn{position:fixed;right:0;top:0;bottom:0;z-index:65;width:min(420px,100vw);padding:calc(20px + env(safe-area-inset-top,0px)) 24px calc(24px + env(safe-area-inset-bottom,0px));overflow-y:auto;background:rgba(14,12,24,.96);backdrop-filter:blur(24px);border-left:1px solid var(--line);transform:translateX(105%);transition:transform .5s cubic-bezier(.22,1,.36,1)}
+#pn.open{transform:none}
+#pn h3{margin:0;font-size:22px}
+#pn fieldset{margin:0 0 16px;padding:14px;border:1px solid var(--line);border-radius:16px}
+#pn legend{padding:0 8px;font-size:12px;color:var(--p4);font-weight:700}
+#pn label{display:block;margin-bottom:10px;font-size:12px;color:var(--mute)}
+#pn input,#pn textarea{display:block;width:100%;margin-top:4px;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--fg);font:inherit;font-size:13px;outline:0}
+#pn input:focus,#pn textarea:focus{border-color:var(--p1)}
+.pn-acts{display:flex;gap:8px;position:sticky;bottom:-24px;margin:16px -24px -24px;padding:14px 24px 24px;background:#0e0c18;border-top:1px solid rgba(255,255,255,.1)}
+.pn-acts button{flex:1;padding:10px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;font-weight:600;font-size:13px;cursor:pointer}
+.pn-acts .pri{background:var(--grad);background-size:300% 100%;color:#0a0814;border:0}
+.toast{position:fixed;left:50%;bottom:calc(100px + env(safe-area-inset-bottom,0px));z-index:95;padding:10px 20px;border-radius:99px;background:var(--grad);background-size:300% 100%;color:#0a0814;font-weight:700;font-size:14px;animation:pop 2.2s ease forwards,flow 2s linear infinite;pointer-events:none}
+</style>
+</head>
+<body>
+<div id="ld"><div id="ln">0</div><div id="lb"></div></div>
+<div id="bar"></div><div class="cur" id="cur"></div><div class="ring" id="ring"><span id="rl"></span></div>
+<div class="bg" id="bg"><i></i><i></i><i></i><i></i></div>
+<canvas id="fx"></canvas>
+
+<header id="hd">
+  <a href="#top" class="wordmark rip">
+    <span class="wordmark-dot"></span>
+    <span id="logo-name">Rajan Maheshwari</span>
+  </a>
+  <nav id="nav">
+    <span id="ind"></span>
+    <a href="#work" class="rip">Work</a>
+    <a href="#stack" class="rip">Stack</a>
+    <a href="#about" class="rip">About</a>
+    <a href="#contact" class="rip">Contact</a>
+  </nav>
+    <button class="cmd-btn rip" id="btn-cmd"><b>⌘K</b> Search</button>
+    <button class="cmd-btn rip" id="btn-edit">✎ Details</button>
+    <button class="cmd-btn rip" id="btn-export-html">📥 Export HTML</button>
+    <a href="#contact" class="cta-btn rip">Get in touch</a>
+  </div>
+</header>
+
+<main>
+<div class="hero" id="top">
+  <div class="meteors-container" id="meteors"></div>
+  <canvas id="orb" aria-hidden="true"></canvas>
+
+  <div class="status-pill">
+    <i></i><span>Available for Full-Stack & Android Roles</span>
+  </div>
+
+  <h1 id="h1"></h1>
+  <p class="sub" id="sub"></p>
+
+  <div class="hero-acts">
+    <a href="#work" class="primary rip">Explore Projects ↓</a>
+    <a href="https://github.com/rajanvinzoda" target="_blank" rel="noreferrer" class="secondary rip">GitHub Profile ↗</a>
+    <a href="https://www.linkedin.com/in/rajan-maheshwari-6372582a7" target="_blank" rel="noreferrer" class="secondary rip">LinkedIn ↗</a>
+    <a href="#contact" class="secondary rip">Contact details</a>
+  </div>
+
+  <div class="hint">Move your cursor across text. Click anywhere for sparks. Use dock below to explore.</div>
+  <a href="#work" class="scr" aria-label="Scroll to work"><i></i></a>
+</div>
+
+<div class="marq m2" aria-hidden="true"><div class="mq" id="mq2"></div></div>
+
+<section id="work">
+  <span class="kicker">Featured Engineering & Code</span>
+  <h2 class="hd"><span>Selected work</span></h2>
+  <div class="stats" id="stats"></div>
+
+  <div class="filter-bar">
+    <div class="tab-pills" id="filters"></div>
+    <button class="repo-btn rip" id="toggle-repos">▼ View Live GitHub Repos</button>
+  </div>
+
+  <div id="repos-panel">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h3 style="margin:0;font-size:18px">GitHub Live Public Repositories</h3>
+      <a href="https://github.com/rajanvinzoda" target="_blank" rel="noreferrer" style="font-size:12px;color:var(--p4)">github.com/rajanvinzoda ↗</a>
+    </div>
+    <div class="repos-grid" id="repos-grid"></div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+</section>
+
+<div class="marq" aria-hidden="true"><div class="mq" id="mq1"></div></div>
+
+<section id="stack">
+  <span class="kicker">Tools, Technologies & Experience</span>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;flex-wrap:wrap;gap:16px">
+    <h2 class="hd" style="margin:0"><span>Tech Stack & Journey</span></h2>
+    <span style="font-size:12px;font-family:var(--mono);padding:6px 14px;border-radius:99px;border:1px solid var(--line);color:var(--mute);background:rgba(255,255,255,.02)">Categorized Technologies</span>
+  </div>
+
+  <div class="stack-grid">
+    <div>
+      <div id="stack-container"></div>
+      <div class="terminal" id="terminal-box"></div>
+    </div>
+    <div>
+      <h3 style="margin:0 0 16px;font-size:22px">Career & Academic Milestones</h3>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <span class="kicker">Perspective & Craft</span>
+  <h2 class="hd"><span>About</span></h2>
+  <p class="about" id="about-t"></p>
+</section>
+
+<section class="contact" id="contact">
+  <span class="kicker" style="color:var(--p3)">Let’s connect</span>
+  <p>Have a project, role, or technical challenge in mind? Click to copy my email.</p>
+  <a class="mag" id="mail" data-cursor="Copy"></a>
+  <div class="pills" id="pills"></div>
+
+  <div id="note-form">
+    <h4 style="margin:0 0 6px;font-size:16px">Send a direct message to Rajan</h4>
+    <p style="margin:0 0 16px;font-size:12px;color:var(--mute)">Opens your default mail app pre-populated with your draft.</p>
+    <label style="font-size:12px;color:var(--mute)">Subject</label>
+    <input id="note-sub" placeholder="Full-Stack / Android Opportunity" />
+    <label style="font-size:12px;color:var(--mute)">Message</label>
+    <textarea id="note-body" rows="4" placeholder="Hi Rajan, I came across your portfolio and wanted to discuss..."></textarea>
+    <button class="cta-btn rip" id="note-send" style="width:100%">Open in Mail App →</button>
+  </div>
+</section>
+</main>
+
+<div class="dock-wrap">
+  <div class="dock" id="dock-bar"></div>
+  <div class="dock-ask rip" id="btn-ask">✨ Ask AI Assistant</div>
+</div>
+
+<div id="ai-box">
+  <form id="ai-form">
+    <input id="ai-input" placeholder="Ask about Rajan's apps, Android, stack, repos..." autocomplete="off">
+    <button type="submit">↑</button>
+    <button type="button" id="ai-close" style="background:none;color:var(--mute);width:auto;height:auto;font-size:14px">✕</button>
+  </form>
+  <div id="ai-ans"></div>
+</div>
+
+<div id="cmd-menu">
+  <div class="cmd-box">
+    <div class="cmd-search">
+      <span style="color:var(--mute)">🔍</span>
+      <input id="cmd-input" placeholder="Search projects, skills, or jump to section..." autofocus>
+      <span style="font-family:var(--mono);font-size:11px;color:var(--mute)">ESC</span>
+    </div>
+    <div class="cmd-list" id="cmd-list"></div>
+  </div>
+</div>
+
+<div id="modal">
+  <div class="modal-content" id="modal-box"></div>
+</div>
+
+<aside id="pn" aria-label="Edit your details"></aside>
+
+<script>
+const ME = {
+  name: "Rajan Maheshwari",
+  email: "vinzodarajan@gmail.com",
+  githubUser: "rajanvinzoda",
+  headline: "I build calm, fast web interfaces, Android apps & intelligent systems.",
+  sub: "Full-stack and Android developer working with TypeScript, Kotlin, React, and AI tooling. Creator of AI Study Planner, CampusConnect, and VibeFlow. Passionate about responsive motion, intuitive UX, and clean architecture.",
+  about: "I turn ambitious ideas into polished, working software. My engineering spans modern web interfaces, native Android applications, and AI-assisted workflows. I focus on sub-second load times, smooth gesture interactions, and resilient architecture across the stack.",
+  skills: [
+    "TypeScript", "Kotlin", "React", "Android SDK", "Tailwind CSS",
+    "Node.js", "Next.js", "Firebase", "Jetpack Compose", "Git", "REST APIs", "WebSockets"
+  ],
+  skillCategories: [
+    {
+      name: "Frontend & Web",
+      color: "#22d3ee",
+      grad: "linear-gradient(90deg, #22d3ee, #7c5cff)",
+      items: [
+        { name: "TypeScript", level: 9, desc: "Type safety, generics, full-stack typed contracts" },
+        { name: "React 19", level: 9, desc: "Concurrent rendering, hooks, reactive component trees" },
+        { name: "Tailwind CSS", level: 9, desc: "Utility-first design tokens, fluid layouts, dark mode" },
+        { name: "Next.js", level: 8, desc: "App router, SSR/SSG, server actions, route handlers" },
+        { name: "HTML5 Canvas", level: 8, desc: "3D particle orb projection, 60fps lightweight math" },
+        { name: "Responsive Motion", level: 9, desc: "Micro-interactions, spring physics, gesture feedback" }
+      ]
+    },
+    {
+      name: "Android & Mobile",
+      color: "#ff4d8d",
+      grad: "linear-gradient(90deg, #ff4d8d, #ffb02e)",
+      items: [
+        { name: "Kotlin", level: 9, desc: "Coroutines, Flow, structured concurrency, idiomatic architecture" },
+        { name: "Android SDK", level: 9, desc: "Services, permissions, audio pipelines, lifecycle management" },
+        { name: "Jetpack Compose", level: 8, desc: "Declarative UI, State hoist, custom modifiers" },
+        { name: "ExoPlayer / Media3", level: 8, desc: "Low-latency streaming audio, frequency visualizers" },
+        { name: "Material 3", level: 9, desc: "Dynamic color matching, swipe gestures, haptic feedback" },
+        { name: "MVVM Architecture", level: 9, desc: "StateFlow, ViewModel separation, unidirectional flows" }
+      ]
+    },
+    {
+      name: "Backend & Cloud",
+      color: "#a3e635",
+      grad: "linear-gradient(90deg, #a3e635, #22d3ee)",
+      items: [
+        { name: "Firebase Suite", level: 9, desc: "Firestore real-time sync, Auth, Cloud Storage, rules" },
+        { name: "REST APIs", level: 9, desc: "Contract design, rate-limiting, error hierarchies" },
+        { name: "Node.js & Express", level: 8, desc: "Async middleware, microservices, secure authentication" },
+        { name: "WebSockets", level: 8, desc: "Bi-directional channels, presence detection, live chat" },
+        { name: "Git & GitHub CI", level: 9, desc: "Trunk-based workflow, actions automation, code hygiene" }
+      ]
+    }
+  ],
+  stats: [
+    { n: 9, s: "+", l: "GitHub Repositories" },
+    { n: 3, s: "", l: "Native Android Apps" },
+    { n: 99, s: "/100", l: "Lighthouse Speed" },
+    { n: 100, s: "%", l: "Open Source Code" }
+  ],
+  links: [
+    { t: "GitHub", h: "https://github.com/rajanvinzoda" },
+    { t: "LinkedIn", h: "https://www.linkedin.com/in/rajan-maheshwari-6372582a7" },
+    { t: "Email", h: "mailto:vinzodarajan@gmail.com" },
+    { t: "Resume", h: "#contact" }
+  ],
+  milestones: [
+    {
+      year: "2025 – Present",
+      role: "Full-Stack & Android Developer",
+      org: "Independent & Open Source Development",
+      desc: "Building AI Study Planner, university communication ecosystems (CampusConnect), and native Kotlin media applications with dynamic UI and real-time synchronization."
+    },
+    {
+      year: "2024 – 2025",
+      role: "Mobile & Systems Engineering",
+      org: "Android & Web Applications",
+      desc: "Engineered VibeFlow (Android music player with real-time waveform visualizers) and ConnectApp for student community networking."
+    },
+    {
+      year: "2023 – 2024",
+      role: "AI & Full-Stack Exploration",
+      org: "Academic Projects & Tooling",
+      desc: "Developed JARVIS virtual assistant, explored generative AI slide engines (Presenton), and authored custom UX enhancement suites."
+    }
+  ],
+  projects: [
+    {
+      id: "ai-study-planner",
+      t: "AI Study Planner",
+      d: "A modern productivity web application built to improve student learning efficiency. Users upload timetables, generate personalized schedules, monitor learning analytics, and enter distraction-free focus mode.",
+      category: "Web & AI",
+      tags: ["TypeScript", "React", "Study Analytics", "Tailwind", "Productivity"],
+      c: ["#7c5cff", "#22d3ee", "#ff4d8d"],
+      githubUrl: "https://github.com/rajanvinzoda/Ai-study-planner",
+      highlights: [
+        "Automated timetable parser converting class schedules into dynamic daily study sessions",
+        "Distraction-free focus timer with Pomodoro tracking and task completion metrics",
+        "Interactive dashboard displaying weekly study hours, subject retention, and consistency streaks",
+        "Customizable study block duration and automated break interval reminders"
+      ]
+    },
+    {
+      id: "campus-connect",
+      t: "CampusConnect",
+      d: "A real-time university ecosystem uniting students, faculty, clubs, and administrators on a unified platform for campus communication, event management, and academic collaboration.",
+      category: "Android & Mobile",
+      tags: ["Kotlin", "Android SDK", "Firebase", "Real-Time Chat", "Material Design"],
+      c: ["#ff4d8d", "#ffb02e", "#7c5cff"],
+      githubUrl: "https://github.com/rajanvinzoda/campus-connect-",
+      highlights: [
+        "Real-time instant messaging channels for student study circles, campus clubs, and faculty",
+        "Campus event discovery system with RSVP confirmation, scheduling, and live push notifications",
+        "Academic study resource repository for sharing class notes, PDFs, and previous exam guides",
+        "Built natively in Kotlin with clean MVVM architecture and background data synchronization"
+      ]
+    },
+    {
+      id: "vibeflow",
+      t: "VibeFlow Music Player",
+      d: "A sleek, native Android music player app engineered for seamless audio playback, dynamic visualizer animations, intuitive gesture controls, and organized playlist curation.",
+      category: "Android & Mobile",
+      tags: ["Kotlin", "ExoPlayer", "Audio Visualizer", "Android", "UI/UX"],
+      c: ["#22d3ee", "#a3e635", "#7c5cff"],
+      githubUrl: "https://github.com/rajanvinzoda/VibeFlow",
+      highlights: [
+        "Low-latency audio streaming and local playback engine powered by Android ExoPlayer / Media3",
+        "Real-time dynamic waveform and frequency spectrum visualizer synced to active audio beats",
+        "Gesture-driven navigation for queue manipulation, volume swells, and quick track scrubbing",
+        "Automatic metadata extraction with album art caching and playlist categorization"
+      ]
+    },
+    {
+      id: "jarvis",
+      t: "JARVIS AI Assistant",
+      d: "An intelligent AI virtual assistant application designed to automate developer workflows, voice interaction, system command execution, and prompt orchestration.",
+      category: "Web & AI",
+      tags: ["TypeScript", "Node.js", "AI Assistant", "Voice Recognition", "Automation"],
+      c: ["#ffb02e", "#ff4d8d", "#7c5cff"],
+      githubUrl: "https://github.com/rajanvinzoda/JARVIS",
+      highlights: [
+        "Voice-activated command recognition and natural language intent parsing",
+        "Automated developer scripts, workspace launcher, and system status retrieval",
+        "Contextual memory retaining previous command inputs for multi-turn execution"
+      ]
+    },
+    {
+      id: "presenton",
+      t: "Presenton AI Presentation Engine",
+      d: "Open-source AI presentation generator and API alternative to Gamma, Canva, and Beautiful AI. Transforms structured prompts and markdown into elegant, fully-formatted slide decks.",
+      category: "Web & AI",
+      tags: ["AI Slides", "TypeScript", "Presentation API", "Tailwind", "Markdown"],
+      c: ["#a3e635", "#22d3ee", "#ffb02e"],
+      githubUrl: "https://github.com/rajanvinzoda/presenton",
+      highlights: [
+        "Generates presentation slide layouts from raw topic prompts and Markdown outlines",
+        "Export capabilities to PDF, PowerPoint (PPTX), and responsive browser slideshows",
+        "Modular slide components with dynamic themes, typography hierarchies, and card grids"
+      ]
+    },
+    {
+      id: "wand-enhancer",
+      t: "Wand-Enhancer Suite",
+      d: "Advanced UX and interoperability extension suite for the Wand app, elevating in-game overlay controls, hotkey management, and game client telemetry.",
+      category: "Tooling & UX",
+      tags: ["JavaScript", "Extension", "Interoperability", "UX Engineering"],
+      c: ["#7c5cff", "#ff4d8d", "#22d3ee"],
+      githubUrl: "https://github.com/rajanvinzoda/Wand-Enhancer",
+      highlights: [
+        "Custom lightweight overlay HUD with responsive hotkey configuration",
+        "Bi-directional telemetry bridge between client application and background processes",
+        "Streamlined profile switcher with instant settings persistence"
+      ]
+    },
+    {
+      id: "connectapp",
+      t: "ConnectApp Mobile",
+      d: "Real-time Android social networking and messaging application built for student communities, featuring encrypted peer-to-peer chat, user profiles, and multimedia feeds.",
+      category: "Android & Mobile",
+      tags: ["Kotlin", "Android", "WebSockets", "Firebase", "Cloud Storage"],
+      c: ["#ff4d8d", "#7c5cff", "#22d3ee"],
+      githubUrl: "https://github.com/rajanvinzoda/connectapp",
+      highlights: [
+        "Real-time messaging with live typing indicators and delivery receipts",
+        "Optimized image compression and memory-cached media feeds for infinite scrolling",
+        "Modular Android architecture with dependency injection and reactive state"
+      ]
+    },
+    {
+      id: "portfolio-site",
+      t: "Creative Developer Portfolio",
+      d: "High-performance cosmic portfolio featuring 3D mathematical particle orbs, kinetic wave typography, tilt glow cards, and real-time live GitHub API integration.",
+      category: "Web & AI",
+      tags: ["Single HTML", "TypeScript", "Canvas 2D", "Vite", "Responsive"],
+      c: ["#22d3ee", "#7c5cff", "#ffb02e"],
+      githubUrl: "https://github.com/rajanvinzoda/portfolio",
+      highlights: [
+        "Lightweight Canvas 2D 3D spherical mesh with zero external Three.js dependencies",
+        "Word-by-word scroll highlight reveal and kinetic character wave distortion on cursor proximity",
+        "Full local customizer drawer syncing live with browser localStorage"
+      ]
+    }
+  ],
+  answers: {
+    work: "Rajan has engineered AI Study Planner (an automated scheduling & focus web app), CampusConnect (a real-time university Android ecosystem), VibeFlow (an Android music player with dynamic visualizers), JARVIS (an AI developer assistant), Presenton, ConnectApp, and Wand-Enhancer. Scroll to Selected Work to explore code repositories.",
+    skill: "Rajan's core stack covers TypeScript, Kotlin, React, Android SDK, Jetpack Compose, Tailwind CSS, Node.js, and Firebase, with expertise spanning both full-stack web and native mobile engineering.",
+    contact: "You can reach Rajan directly at vinzodarajan@gmail.com, or connect on LinkedIn (linkedin.com/in/rajan-maheshwari-6372582a7) and GitHub (github.com/rajanvinzoda). Clicking the email banner at the bottom copies it instantly.",
+    github: "Rajan's GitHub is @rajanvinzoda (https://github.com/rajanvinzoda). You can view all 9 public repositories directly on GitHub or by toggling 'View Live GitHub Repos' on this page.",
+    experience: "Rajan is a full-stack and Android developer who has shipped multiple native Kotlin mobile apps, AI-powered productivity platforms, and web applications.",
+    default: "I can answer questions about Rajan Maheshwari's GitHub projects (AI Study Planner, CampusConnect, VibeFlow, JARVIS), tech stack (TypeScript, Kotlin, React, Android), or how to get in touch."
+  }
+};
+
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
+let chars = [], aw = [];
+
+/* local storage sync */
+try {
+  const saved = JSON.parse(localStorage.getItem("pf-rajan-single") || "null");
+  if (saved) Object.assign(ME, saved);
+} catch (_) {}
+
+/* meteors spawn */
+const meteorsContainer = $("#meteors");
+for (let i = 0; i < 22; i++) {
+  const m = document.createElement("span");
+  m.className = "meteor";
+  m.style.left = (Math.random() * 900 - 300) + "px";
+  m.style.animationDelay = (Math.random() * 4) + "s";
+  m.style.animationDuration = (Math.random() * 4 + 3) + "s";
+  meteorsContainer.appendChild(m);
+}
+
+/* render page */
+let selectedCategory = "All";
+
+function render(first) {
+  document.title = ME.name + " · Developer Portfolio";
+  $("#logo-name").textContent = ME.name;
+
+  let ci = 0;
+  $("#h1").innerHTML = ME.headline.split(" ").map(w => `<span class="wd">${[...w].map(ch => `<span class="c" style="transition-delay:${first ? ci++ * 28 : 0}ms">${ch}</span>`).join("")}</span> `).join("");
+  chars = $$("#h1 .c");
+  $("#sub").textContent = ME.sub;
+
+  // stats
+  $("#stats").innerHTML = ME.stats.map((x, i) => `
+    <div class="stat rv${first ? "" : " on"}" style="transition-delay:${i * 120}ms">
+      <b data-n="${x.n}" data-s="${x.s || ""}">${first ? 0 : x.n + (x.s || "")}</b>
+      <span>${x.l}</span>
+    </div>
+  `).join("");
+
+  // categories
+  const categories = ["All", ...new Set(ME.projects.map(p => p.category))];
+  $("#filters").innerHTML = categories.map(cat => `
+    <button class="rip ${selectedCategory === cat ? "on" : ""}" data-cat="${cat}">${cat}</button>
+  `).join("");
+
+  // projects grid
+  const filtered = selectedCategory === "All" ? ME.projects : ME.projects.filter(p => p.category === selectedCategory);
+  $("#grid").innerHTML = filtered.map((p, i) => `
+    <div class="card rv${first ? "" : " on"}" data-idx="${i}" data-cursor="View" style="--c1:${p.c[0]};--c2:${p.c[1]};--c3:${p.c[2]};transition-delay:${(i % 3) * 110}ms">
+      <div class="art"><i></i><i></i><i></i><span class="n">0${i + 1}</span><span class="cat-badge">${p.category}</span></div>
+      <div class="body">
+        <div>
+          <h3>${p.t}</h3>
+          <p>${p.d}</p>
+        </div>
+        <div>
+          <div class="tags">${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
+          <div class="card-cta">
+            <span>View Case Study →</span>
+            <a href="${p.githubUrl}" target="_blank" rel="noreferrer" onclick="event.stopPropagation()" style="text-decoration:underline">GitHub Repo ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join("");
+
+  // stack & capabilities
+  renderStack();
+
+  // terminal
+  renderTerminal();
+
+  // timeline
+  $("#timeline").innerHTML = ME.milestones.map(m => `
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-yr">${m.year}</div>
+      <h4>${m.role}</h4>
+      <div class="tl-org">${m.org}</div>
+      <p class="tl-desc">${m.desc}</p>
+    </div>
+  `).join("");
+
+  // about text
+  $("#about-t").innerHTML = ME.about.split(" ").map((w, i) => `<span style="--wc:hsl(${(i * 14 + 190) % 360} 95% 68%)">${w}</span>`).join(" ");
+  aw = $$(".about span");
+
+  // marquees
+  const mk = ME.skills.map(x => `<span>${x}</span><i>✦</i>`).join("");
+  $("#mq1").innerHTML = mk + mk + mk + mk;
+  $("#mq2").innerHTML = mk + mk + mk + mk;
+
+  // mail
+  $("#mail").href = "mailto:" + ME.email;
+  $("#mail").innerHTML = [...ME.email].map(ch => `<span class="c2">${ch}</span>`).join("");
+
+  // pills
+  $("#pills").innerHTML = ME.links.map(l => `<a class="rip" href="${l.h}" ${l.h.startsWith('http') ? 'target="_blank" rel="noreferrer"' : ''}>${l.t} ${l.h.startsWith('http') ? '↗' : ''}</a>`).join("") +
+    `<button class="rip" id="btn-open-note">✉ Send a Quick Note</button>` +
+    `<button class="rip" id="btn-dl-html">📥 Download Single HTML</button>`;
+
+  // dock bar
+  renderDock();
+
+  if (first) {
+    $$(".rv,.hd").forEach(el => io.observe(el));
+  } else {
+    onScroll();
+  }
+}
+
+function renderStack() {
+  const container = $("#stack-container");
+  container.innerHTML = ME.skillCategories.map(cat => `
+    <div class="stack-box">
+      <div class="cat-hdr">
+        <h4><span class="cat-dot" style="background:${cat.color};box-shadow:0 0 10px ${cat.color}"></span>${cat.name}</h4>
+        <span style="font-size:12px;color:var(--mute);font-weight:500">${cat.items.length} proficiencies</span>
+      </div>
+      <div class="skills-cards-grid">
+        ${cat.items.map(item => `
+          <div class="skill-card" style="--skill-accent:${cat.color}">
+            <div class="skill-top">
+              <span class="skill-title">${item.name}</span>
+              <span class="skill-badge" style="border-color:${cat.color}40;color:${cat.color}">${item.level >= 9 ? 'Expert' : 'Advanced'}</span>
+            </div>
+            ${item.desc ? `<p class="skill-desc">${item.desc}</p>` : ''}
+          </div>
+        `).join("")}
+      </div>
+    </div>
+  `).join("");
+}
+
+/* interactive terminal */
+let termTab = "npx";
+function renderTerminal() {
+  const terminal = $("#terminal-box");
+  const data = {
+    npx: {
+      cmd: "npx rajan@latest",
+      lines: [
+        { c: "term-comment", t: "# Run interactive developer portfolio CLI" },
+        { c: "term-prompt", t: "$ npx rajan@latest" },
+        { c: "term-success", t: "✔ Loaded developer profile: Rajan Maheshwari" },
+        { c: "", t: "→ Focus: High-Performance Android & Web Systems" },
+        { c: "", t: "→ GitHub: https://github.com/rajanvinzoda" },
+        { c: "", t: "→ Status: Available for Full-Stack & Mobile Roles" }
+      ]
+    },
+    skills: {
+      cmd: "curl -s https://api.rajan.dev/stack",
+      lines: [
+        { c: "term-comment", t: "# Verified proficiency benchmarks" },
+        { c: "term-prompt", t: "$ curl -s https://api.rajan.dev/stack" },
+        { c: "term-success", t: '{ "mobile": ["Kotlin", "Android SDK", "Jetpack Compose", "Coroutines"],' },
+        { c: "term-success", t: '  "web": ["TypeScript", "React 19", "Next.js", "Tailwind CSS"],' },
+        { c: "term-success", t: '  "cloud": ["Firebase", "REST APIs", "WebSockets"] }' }
+      ]
+    },
+    repos: {
+      cmd: "gh repo list rajanvinzoda --public",
+      lines: [
+        { c: "term-comment", t: "# Active public repositories" },
+        { c: "term-prompt", t: "$ gh repo list rajanvinzoda --public" },
+        { c: "", t: "rajanvinzoda/Ai-study-planner   [TypeScript]  Productivity App" },
+        { c: "", t: "rajanvinzoda/campus-connect-    [Kotlin]      University Ecosystem" },
+        { c: "", t: "rajanvinzoda/VibeFlow          [Kotlin]      Android Waveform Player" },
+        { c: "", t: "rajanvinzoda/JARVIS            [TypeScript]  AI Virtual Assistant" }
+      ]
+    }
+  };
+
+  terminal.innerHTML = `
+    <div class="terminal-hdr">
+      <div class="term-dots">
+        <span style="background:#ff5f56"></span>
+        <span style="background:#ffbd2e"></span>
+        <span style="background:#27c93f"></span>
+        <span style="margin-left:8px;font-family:var(--f);font-weight:700;color:var(--mute)">rajan@developer-box: ~</span>
+      </div>
+      <div class="term-tabs">
+        <button class="rip ${termTab === 'npx' ? 'on' : ''}" data-ttab="npx">npx rajan</button>
+        <button class="rip ${termTab === 'skills' ? 'on' : ''}" data-ttab="skills">skills.json</button>
+        <button class="rip ${termTab === 'repos' ? 'on' : ''}" data-ttab="repos">repos.sh</button>
+      </div>
+    </div>
+    <div class="terminal-body" id="term-screen">
+      ${data[termTab].lines.map(l => `<div class="term-line ${l.c}">${l.t}</div>`).join("")}
+      <div id="term-history"></div>
+      <form class="term-form" id="term-input-form">
+        <span class="term-prompt">$</span>
+        <input class="term-input" id="term-in" placeholder="Try typing 'help', 'repos', 'skills', or 'clear'..." autocomplete="off">
+      </form>
+    </div>
+    <div class="term-quick">
+      <span style="font-family:var(--f);font-weight:700">Quick tests:</span>
+      <button class="rip" data-tcmd="help">help</button>
+      <button class="rip" data-tcmd="skills">skills</button>
+      <button class="rip" data-tcmd="repos">repos</button>
+      <button class="rip" data-tcmd="whoami">whoami</button>
+      <button class="rip" data-tcmd="contact">contact</button>
+    </div>
+  `;
+}
+
+function handleTermCmd(cmd) {
+  const h = $("#term-history");
+  if (!h) return;
+  const c = cmd.trim().toLowerCase();
+  if (c === "clear") {
+    h.innerHTML = "";
+    return;
+  }
+  let res = "";
+  if (c === "help") res = "Available commands: skills, repos, contact, whoami, clear";
+  else if (c === "whoami") res = "Rajan Maheshwari — Full-Stack & Android Developer (TypeScript, Kotlin, React, AI)";
+  else if (c === "skills") res = "Kotlin (9/10), Android SDK (9/10), TypeScript (9/10), React (9/10), Firebase (9/10)";
+  else if (c === "repos") res = "Ai-study-planner, CampusConnect, VibeFlow, JARVIS, presenton, connectapp, portfolio";
+  else if (c === "contact") res = "Email: vinzodarajan@gmail.com | LinkedIn: rajan-maheshwari-6372582a7";
+  else res = `command not found: "${cmd}". Type "help" for a list of commands.`;
+
+  const row = document.createElement("div");
+  row.style.marginTop = "8px";
+  row.innerHTML = `<span style="color:var(--p2)">rajan@portfolio</span>:<span style="color:var(--p5)">~</span>$ ${cmd}<div style="color:rgba(255,255,255,.9);margin-top:2px">${res}</div>`;
+  h.appendChild(row);
+  $("#term-in").value = "";
+}
+
+/* dock icons */
+function renderDock() {
+  const d = $("#dock-bar");
+  const items = [
+    { title: "GitHub", href: "https://github.com/" + ME.githubUser, target: "_blank", svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>' },
+    { title: "LinkedIn", href: "https://www.linkedin.com/in/rajan-maheshwari-6372582a7", target: "_blank", svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>' },
+    { title: "Selected Work", href: "#work", svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>' },
+    { title: "Tech Stack", href: "#stack", svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>' },
+    { title: "Email", href: "mailto:" + ME.email, svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>' }
+  ];
+
+  d.innerHTML = items.map(it => `
+    <a href="${it.href}" ${it.target ? 'target="_blank" rel="noreferrer"' : ''} class="dock-item rip" title="${it.title}">
+      ${it.svg}
+    </a>
+  `).join("");
+}
+
+/* loader */
+const ld = $("#ld"), ln = $("#ln"), lb = $("#lb"), L0 = performance.now();
+(function load() {
+  const p = Math.min(1, (performance.now() - L0) / (reduce ? 150 : 800)), e = 1 - Math.pow(1 - p, 3);
+  ln.textContent = Math.round(e * 100);
+  lb.style.transform = `scaleX(${e})`;
+  if (p < 1) requestAnimationFrame(load);
+  else {
+    ld.classList.add("done");
+    document.body.classList.add("ready");
+    setTimeout(() => ld.remove(), 1000);
+    setTimeout(() => $("#h1").classList.add("live"), 2000);
+  }
+})();
+
+/* count anim */
+const count = el => {
+  const n = +el.dataset.n, s = el.dataset.s || "", t0 = performance.now();
+  (function f() {
+    const p = Math.min(1, (performance.now() - t0) / 1200);
+    el.textContent = Math.round(n * (1 - Math.pow(1 - p, 4))) + s;
+    if (p < 1) requestAnimationFrame(f);
+  })();
+};
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) {
+    const el = e.target;
+    el.classList.add("on");
+    if (el.classList.contains("stat")) count(el.querySelector("b"));
+    io.unobserve(el);
+  }
+}), { threshold: .15 });
+
+/* navigation indicator & scroll */
+const nl = $$("#nav a"), ind = $("#ind");
+let curA = null;
+const moveInd = a => {
+  if (!a) { ind.style.opacity = 0; return; }
+  ind.style.opacity = 1;
+  ind.style.width = a.offsetWidth + "px";
+  ind.style.transform = `translateX(${a.offsetLeft}px)`;
+};
+const setA = a => { curA = a; nl.forEach(x => x.classList.toggle("on", x === a)); moveInd(a); };
+["work", "stack", "about", "contact"].forEach(id => {
+  const el = $("#" + id);
+  if (el) new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) setA(nl.find(a => a.hash === "#" + id)); }), { rootMargin: "-40% 0px -40% 0px" }).observe(el);
+});
+new IntersectionObserver(e => { if (e[0].isIntersecting) setA(null); }, { rootMargin: "-40% 0px -40% 0px" }).observe($("#top"));
+
+const CH = "!<>-_\\/[]{}=+*^?#abcdefghijklmnopqrstuvwxyz";
+nl.forEach(a => {
+  const o = a.textContent;
+  a.addEventListener("pointerenter", () => {
+    moveInd(a);
+    let i = 0;
+    const id = setInterval(() => {
+      a.textContent = [...o].map((c, k) => k < i ? c : CH[Math.floor(Math.random() * CH.length)]).join("");
+      if (++i > o.length) { clearInterval(id); a.textContent = o; }
+    }, 35);
+  });
+  a.addEventListener("pointerleave", () => moveInd(curA));
+});
+
+/* particles & cursor */
+const cur = $("#cur"), ring = $("#ring"), rl = $("#rl"), fx = $("#fx"), g = fx.getContext("2d"), FX = [];
+let mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my, vel = 0, lastY = scrollY, hue = 0, dpr = 1;
+const fit = () => { dpr = Math.min(2, devicePixelRatio || 1); fx.width = innerWidth * dpr; fx.height = innerHeight * dpr; };
+fit(); addEventListener("resize", fit);
+
+function spawn(x, y, n, s, burst) {
+  if (reduce) return;
+  for (let i = 0; i < n && FX.length < 360; i++) {
+    const a = Math.random() * 6.283, v = s * (.3 + Math.random() * (burst ? 2.4 : 1));
+    FX.push({ x, y, vx: Math.cos(a) * v, vy: Math.sin(a) * v - (burst ? 0 : .3), l: 1, d: .014 + Math.random() * .02, h: (hue + Math.random() * 80) % 360, r: 1.5 + Math.random() * (burst ? 3.2 : 1.8), b: burst });
+  }
+}
+addEventListener("pointermove", e => {
+  const d = Math.hypot(e.clientX - mx, e.clientY - my);
+  mx = e.clientX; my = e.clientY;
+  if (!reduce) spawn(mx, my, Math.min(2, d / 16), 1.2, false);
+  const t = e.target.closest && e.target.closest("a,button,input,[data-cursor]");
+  ring.classList.toggle("big", !!(t && t.dataset.cursor));
+  rl.textContent = (t && t.dataset.cursor) || "";
+  ring.style.borderColor = t ? "#fff" : "";
+});
+let audioCtx = null;
+function playTone(freq = 440, type = "sine", duration = 0.08, gainVal = 0.035) {
+  try {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === "suspended") audioCtx.resume();
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+    gain.gain.setValueAtTime(gainVal, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start();
+    osc.stop(audioCtx.currentTime + duration);
+  } catch (_) {}
+}
+
+addEventListener("pointerdown", e => {
+  ring.classList.add("dn");
+  spawn(e.clientX, e.clientY, 26, 3.8, true);
+  playTone(560, "triangle", 0.06, 0.03);
+});
+addEventListener("pointerup", () => ring.classList.remove("dn"));
+
+document.addEventListener("pointerdown", e => {
+  const r = e.target.closest && e.target.closest(".rip");
+  if (!r) return;
+  playTone(720, "sine", 0.05, 0.02);
+  const b = r.getBoundingClientRect(), s = document.createElement("span");
+  s.className = "rp";
+  s.style.left = e.clientX - b.left + "px";
+  s.style.top = e.clientY - b.top + "px";
+  r.appendChild(s);
+  setTimeout(() => s.remove(), 700);
+});
+
+/* 3D particle orb */
+const cv = $("#orb"), cx = cv.getContext("2d"), P = [], R = 18;
+for (let k = 0; k < R; k++) {
+  const y = 1 - ((k + .5) / R) * 2, r = Math.sqrt(Math.max(0, 1 - y * y)), m = Math.max(5, Math.round(36 * r));
+  for (let j = 0; j < m; j++) {
+    const a = j / m * 6.2832 + k * .35;
+    P.push([Math.cos(a) * r, y, Math.sin(a) * r]);
+  }
+}
+let tx = 0, ty = 0, sx = 0, sy = 0, rot = 0, osz = 0, odpr = 1, vis = true;
+const ofit = () => { odpr = Math.min(2, devicePixelRatio || 1); osz = cv.clientWidth || 360; cv.width = cv.height = Math.round(osz * odpr); };
+ofit(); addEventListener("resize", ofit);
+new IntersectionObserver(e => { vis = e[0].isIntersecting; }).observe(cv);
+addEventListener("pointermove", e => { tx = (e.clientX / innerWidth - .5) * 1.4; ty = (e.clientY / innerHeight - .5) * 1.4; });
+
+function drawOrb(t) {
+  if (!vis) return;
+  sx += (ty - sx) * .06; sy += (tx - sy) * .06;
+  rot += reduce ? 0 : .004 + Math.abs(vel) * .0016;
+  const c = cv.width / 2, S = c * .8 * (1 - Math.min(.35, Math.abs(vel) * .02));
+  const ya = rot + sy * 1.4, xa = .35 + sx, cy = Math.cos(ya), sy2 = Math.sin(ya), cp = Math.cos(xa), sp2 = Math.sin(xa);
+  const hot = (t * .26) % P.length, out = [];
+  cx.clearRect(0, 0, cv.width, cv.height);
+
+  for (let i = 0; i < P.length; i++) {
+    const p = P[i], x1 = p[0] * cy + p[2] * sy2, z1 = -p[0] * sy2 + p[2] * cy, y2 = p[1] * cp - z1 * sp2, z2 = p[1] * sp2 + z1 * cp;
+    let dd = Math.abs(i - hot); if (dd > P.length - dd) dd = P.length - dd;
+    const f = 2.8 / (2.8 - z2);
+    out.push([c + x1 * S * f, c - y2 * S * f, (z2 + 1) / 2, Math.max(0, 1 - dd / 20), f, i]);
+  }
+  out.sort((a, b) => a[2] - b[2]);
+  for (const o of out) {
+    const l = o[3] * o[3], h = (o[5] * 3.2 + t * .05 + hue) % 360;
+    cx.fillStyle = `hsla(${h}, 95%, ${62 + l * 20}%, ${Math.min(1, .18 + .7 * o[2] * o[2] + l)})`;
+    cx.beginPath();
+    cx.arc(o[0], o[1], (1.3 * (.45 + .75 * o[2]) * o[4] + l * 2.4) * odpr * osz / 520, 0, 6.2832);
+    cx.fill();
+  }
+}
+
+/* wave text */
+function waveChars(t) {
+  const h1 = $("#h1");
+  if (!h1.classList.contains("live") || reduce) return;
+  const r = h1.getBoundingClientRect();
+  if (r.bottom < 0 || r.top > innerHeight) return;
+  chars.forEach((c, i) => {
+    const b = c.getBoundingClientRect(), dx = mx - (b.left + b.width / 2), dy = my - (b.top + b.height / 2), dist = Math.hypot(dx, dy), k = Math.max(0, 1 - dist / 180);
+    if (k > .002) {
+      c.style.transform = `translateY(${(-k * 22).toFixed(1)}px) scale(${(1 + k * .32).toFixed(3)}) rotate(${(dx * -.02 * k).toFixed(1)}deg)`;
+      c.style.color = `hsl(${(i * 24 + t * 90) % 360} 95% ${(100 - k * 35).toFixed(0)}%)`;
+    } else {
+      c.style.transform = ""; c.style.color = "";
+    }
+  });
+}
+
+/* scroll logic */
+const bar = $("#bar"), hdr = $("#hd");
+let lastS = scrollY;
+function onScroll() {
+  const y = scrollY, vh = innerHeight, doc = document.documentElement.scrollHeight - vh;
+  bar.style.transform = `scaleX(${doc > 0 ? y / doc : 0})`;
+  const r = $("#about-t").getBoundingClientRect();
+  const p = Math.min(1, Math.max(0, (vh * .85 - r.top) / (vh * .55 + r.height * .5)));
+  const n = Math.round(p * aw.length);
+  aw.forEach((w, i) => w.classList.toggle("lit", i < n || reduce));
+
+  const d = y - lastS;
+  if (d > 8 && y > 220) hdr.classList.add("hide");
+  else if (d < -8 || y < 120) hdr.classList.remove("hide");
+  lastS = y;
+}
+addEventListener("scroll", onScroll, { passive: true });
+
+/* master loop */
+let T0 = performance.now();
+function tick(now) {
+  const t = (now - T0) / 1000;
+  hue = (t * 40 + scrollY * .12) % 360;
+  const dy = scrollY - lastY; lastY = scrollY;
+  vel += (dy - vel) * .14;
+
+  rx += (mx - rx) * .18; ry += (my - ry) * .18;
+  cur.style.transform = `translate(${mx}px, ${my}px)`;
+  ring.style.transform = `translate(${rx}px, ${ry}px)`;
+
+  drawOrb(t);
+  waveChars(t);
+
+  g.setTransform(dpr, 0, 0, dpr, 0, 0);
+  g.clearRect(0, 0, innerWidth, innerHeight);
+  g.globalCompositeOperation = "lighter";
+  for (let i = FX.length - 1; i >= 0; i--) {
+    const p = FX[i]; p.x += p.vx; p.y += p.vy; p.vx *= .975; p.vy *= .975;
+    if (p.b) p.vy += .05; p.l -= p.d;
+    if (p.l <= 0) { FX.splice(i, 1); continue; }
+    g.fillStyle = `hsla(${p.h}, 95%, 62%, ${p.l})`;
+    g.beginPath();
+    g.arc(p.x, p.y, p.r * p.l + .4, 0, 6.2832);
+    g.fill();
+  }
+  requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+
+/* cards 3d tilt */
+$("#grid").addEventListener("pointermove", e => {
+  const c = e.target.closest(".card");
+  if (!c) return;
+  const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+  c.style.setProperty("--mx", x * 100 + "%");
+  c.style.setProperty("--my", y * 100 + "%");
+  if (!reduce) c.style.transform = `perspective(900px) rotateY(${((x - .5) * 12).toFixed(2)}deg) rotateX(${((.5 - y) * 12).toFixed(2)}deg) translateY(-6px) scale(1.02)`;
+});
+$("#grid").addEventListener("pointerout", e => {
+  const c = e.target.closest(".card");
+  if (c && !c.contains(e.relatedTarget)) c.style.transform = "";
+});
+
+/* card modal opener */
+$("#grid").addEventListener("click", e => {
+  const c = e.target.closest(".card");
+  if (!c || e.target.tagName === "A") return;
+  const idx = +c.dataset.idx;
+  const filtered = selectedCategory === "All" ? ME.projects : ME.projects.filter(p => p.category === selectedCategory);
+  const p = filtered[idx];
+  if (!p) return;
+  openModal(p);
+});
+
+function openModal(p) {
+  const b = $("#modal-box");
+  b.innerHTML = `
+    <button class="modal-close" onclick="$('#modal').classList.remove('open')">✕</button>
+    <div class="modal-art" style="background:linear-gradient(135deg,${p.c[0]},${p.c[1]})">
+      <div>
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:rgba(255,255,255,.8)">${p.category}</div>
+        <h2 style="margin:4px 0 0;font-size:28px">${p.t}</h2>
+      </div>
+    </div>
+    <p style="color:var(--mute);font-size:15px;line-height:1.6">${p.d}</p>
+    <h4 style="font-size:13px;text-transform:uppercase;color:var(--p4);margin:20px 0 8px">Key Highlights</h4>
+    <ul style="padding-left:18px;margin:0 0 20px;font-size:13px;color:rgba(255,255,255,.9)">
+      ${p.highlights.map(h => `<li style="margin-bottom:6px">${h}</li>`).join("")}
+    </ul>
+    <div style="display:flex;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1)">
+      <a href="${p.githubUrl}" target="_blank" rel="noreferrer" class="cta-btn rip">View Code on GitHub ↗</a>
+      <button class="repo-btn rip" onclick="$('#modal').classList.remove('open')">Close</button>
+    </div>
+  `;
+  $("#modal").classList.add("open");
+}
+$("#modal").addEventListener("click", e => { if (e.target.id === "modal") $("#modal").classList.remove("open"); });
+
+/* filter tabs click */
+$("#filters").addEventListener("click", e => {
+  const btn = e.target.closest("button");
+  if (!btn) return;
+  selectedCategory = btn.dataset.cat;
+  render(false);
+});
+
+/* live repos toggle */
+let reposLoaded = false;
+$("#toggle-repos").addEventListener("click", async () => {
+  const panel = $("#repos-panel"), btn = $("#toggle-repos");
+  const isOpen = panel.classList.toggle("open");
+  btn.textContent = isOpen ? "▲ Hide Live GitHub Repos" : "▼ View Live GitHub Repos";
+  btn.classList.toggle("on", isOpen);
+
+  if (isOpen && !reposLoaded) {
+    const grid = $("#repos-grid");
+    grid.innerHTML = '<div style="color:var(--mute);font-size:13px">Loading public repositories...</div>';
+    try {
+      const res = await fetch(`https://api.github.com/users/${ME.githubUser}/repos?sort=updated&per_page=6`);
+      const repos = await res.json();
+      if (Array.isArray(repos) && repos.length) {
+        grid.innerHTML = repos.map(r => `
+          <a href="${r.html_url}" target="_blank" rel="noreferrer" class="repo-card">
+            <div>
+              <h4><span>${r.name}</span><span>↗</span></h4>
+              <p>${r.description || 'Public GitHub repository code & assets.'}</p>
+            </div>
+            <div class="repo-meta">
+              <span>● ${r.language || 'Code'}</span>
+              <span>★ ${r.stargazers_count} ⑂ ${r.forks_count}</span>
+            </div>
+          </a>
+        `).join("");
+        reposLoaded = true;
+      } else {
+        grid.innerHTML = '<div style="color:var(--mute);font-size:13px">No public repositories found.</div>';
+      }
+    } catch (_) {
+      grid.innerHTML = '<div style="color:var(--mute);font-size:13px">Failed to load repositories. Visit github.com/' + ME.githubUser + '</div>';
+    }
+  }
+});
+
+
+/* terminal handlers */
+$("#terminal-box").addEventListener("click", e => {
+  const t = e.target.closest("[data-ttab]");
+  if (t) {
+    termTab = t.dataset.ttab;
+    renderTerminal();
+    return;
+  }
+  const q = e.target.closest("[data-tcmd]");
+  if (q) {
+    handleTermCmd(q.dataset.tcmd);
+  }
+});
+$("#terminal-box").addEventListener("submit", e => {
+  if (e.target.id === "term-input-form") {
+    e.preventDefault();
+    const val = $("#term-in").value;
+    if (val.trim()) handleTermCmd(val);
+  }
+});
+
+/* magnetic email & toast */
+function toast(s) {
+  const t = document.createElement("div");
+  t.className = "toast";
+  t.textContent = s;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 2300);
+}
+const mag = $("#mail");
+addEventListener("pointermove", e => {
+  if (reduce) return;
+  const r = mag.getBoundingClientRect(), dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+  mag.style.transform = Math.hypot(dx, dy) < 300 ? `translate(${dx * .14}px,${dy * .2}px)` : "";
+});
+mag.addEventListener("click", async e => {
+  try {
+    await navigator.clipboard.writeText(ME.email);
+    e.preventDefault();
+    toast("Email copied to clipboard!");
+    spawn(e.clientX, e.clientY, 60, 5, true);
+  } catch (_) {
+    toast("Opening mail client...");
+  }
+});
+
+function downloadSingleHtml() {
+  const htmlContent = "<!doctype html>\n" + document.documentElement.outerHTML;
+  const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `${ME.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-portfolio.html`;
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => { a.remove(); URL.revokeObjectURL(url); }, 600);
+  toast("Downloaded single HTML file!");
+  spawn(innerWidth / 2, innerHeight / 2, 40, 4, true);
+  playTone(880, "sine", 0.1, 0.04);
+}
+
+/* quick note & export */
+document.body.addEventListener("click", e => {
+  if (e.target.id === "btn-open-note") {
+    $("#note-form").classList.toggle("open");
+  }
+  if (e.target.id === "btn-export-html" || e.target.closest("#btn-export-html") || e.target.id === "btn-dl-html") {
+    downloadSingleHtml();
+  }
+  if (e.target.id === "note-send") {
+    const s = $("#note-sub").value, b = $("#note-body").value;
+    location.href = `mailto:${ME.email}?subject=${encodeURIComponent(s || 'Project Collaboration')}&body=${encodeURIComponent(b)}`;
+    toast("Opening email client...");
+    $("#note-form").classList.remove("open");
+  }
+});
+
+/* ai dock assistant */
+const aiBox = $("#ai-box"), aiAns = $("#ai-ans"), aiIn = $("#ai-input");
+$("#btn-ask").addEventListener("click", () => {
+  aiBox.classList.toggle("open");
+  if (aiBox.classList.contains("open")) aiIn.focus();
+});
+$("#ai-close").addEventListener("click", () => aiBox.classList.remove("open"));
+$("#ai-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const q = aiIn.value.trim().toLowerCase();
+  if (!q) return;
+  let ans = ME.answers.default;
+  if (/work|project|app|code/.test(q)) ans = ME.answers.work;
+  else if (/skill|stack|tech|kotlin|react/.test(q)) ans = ME.answers.skill;
+  else if (/github|repo/.test(q)) ans = ME.answers.github;
+  else if (/contact|email|hire|reach/.test(q)) ans = ME.answers.contact;
+  else if (/experience|study|background/.test(q)) ans = ME.answers.experience;
+
+  aiAns.textContent = ans;
+  aiAns.classList.add("open");
+  spawn(innerWidth / 2, innerHeight - 80, 25, 3.5, true);
+});
+
+/* cmd+k menu */
+const cmdMenu = $("#cmd-menu"), cmdIn = $("#cmd-input"), cmdList = $("#cmd-list");
+function openCmd(o) {
+  cmdMenu.classList.toggle("open", o);
+  if (o) {
+    cmdIn.value = "";
+    cmdIn.focus();
+    renderCmd("");
+  }
+}
+function renderCmd(q) {
+  q = q.toLowerCase();
+  const items = [
+    { label: "Copy Email (vinzodarajan@gmail.com)", act: () => { navigator.clipboard.writeText(ME.email); toast("Email copied!"); } },
+    { label: "Open GitHub (@rajanvinzoda)", act: () => window.open("https://github.com/rajanvinzoda", "_blank") },
+    { label: "Open LinkedIn (Rajan Maheshwari)", act: () => window.open("https://www.linkedin.com/in/rajan-maheshwari-6372582a7", "_blank") },
+    { label: "Jump to Selected Work", act: () => $("#work").scrollIntoView({ behavior: "smooth" }) },
+    { label: "Jump to Tech Stack", act: () => $("#stack").scrollIntoView({ behavior: "smooth" }) },
+    { label: "Jump to About Section", act: () => $("#about").scrollIntoView({ behavior: "smooth" }) },
+    ...ME.projects.map(p => ({
+      label: `Project: ${p.t} (${p.category})`,
+      act: () => openModal(p)
+    }))
+  ].filter(it => it.label.toLowerCase().includes(q));
+
+  cmdList.innerHTML = items.length ? items.map((it, idx) => `
+    <div class="cmd-item" data-cidx="${idx}">
+      <span>${it.label}</span>
+      <span style="font-size:10px;color:var(--p4)">↵</span>
+    </div>
+  `).join("") : '<div style="padding:14px;text-align:center;color:var(--mute);font-size:13px">No commands found</div>';
+  cmdList.__items = items;
+}
+cmdIn.addEventListener("input", e => renderCmd(e.target.value));
+cmdList.addEventListener("click", e => {
+  const row = e.target.closest(".cmd-item");
+  if (!row) return;
+  const it = cmdList.__items[+row.dataset.cidx];
+  if (it) { it.act(); openCmd(false); }
+});
+$("#btn-cmd").addEventListener("click", () => openCmd(true));
+cmdMenu.addEventListener("click", e => { if (e.target.id === "cmd-menu") openCmd(false); });
+addEventListener("keydown", e => {
+  if ((e.metaKey || e.ctrlKey) && e.key === "k") { e.preventDefault(); openCmd(!cmdMenu.classList.contains("open")); }
+  if (e.key === "Escape") { openCmd(false); $("#modal").classList.remove("open"); $("#pn").classList.remove("open"); aiBox.classList.remove("open"); }
+});
+
+/* live edit panel */
+const pn = $("#pn"), eb = $("#btn-edit");
+function buildPanel() {
+  pn.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <h3 style="margin:0">Customize Details</h3>
+      <button onclick="$('#pn').classList.remove('open')" style="border:0;background:none;color:#fff;font-size:16px;cursor:pointer">✕</button>
+    </div>
+    <fieldset><legend>Basics</legend>
+      <label>Name<input data-p="name" value="${ME.name}"></label>
+      <label>Email<input data-p="email" value="${ME.email}"></label>
+      <label>GitHub User<input data-p="githubUser" value="${ME.githubUser}"></label>
+      <label>Headline<input data-p="headline" value="${ME.headline}"></label>
+      <label>Intro<textarea rows="2" data-p="sub">${ME.sub}</textarea></label>
+      <label>About<textarea rows="3" data-p="about">${ME.about}</textarea></label>
+    </fieldset>
+    <div class="pn-acts">
+      <button class="rip" id="p-reset">Reset</button>
+      <button class="rip" id="p-copy">Copy JSON</button>
+      <button class="pri rip" onclick="$('#pn').classList.remove('open')">Done</button>
+    </div>
+  `;
+}
+buildPanel();
+eb.addEventListener("click", () => { pn.classList.toggle("open"); buildPanel(); });
+pn.addEventListener("input", e => {
+  const p = e.target.dataset.p;
+  if (!p) return;
+  ME[p] = e.target.value;
+  try { localStorage.setItem("pf-rajan-single", JSON.stringify(ME)); } catch (_) {}
+  render(false);
+});
+pn.addEventListener("click", async e => {
+  if (e.target.id === "p-reset") {
+    localStorage.removeItem("pf-rajan-single");
+    location.reload();
+  }
+  if (e.target.id === "p-copy") {
+    await navigator.clipboard.writeText(JSON.stringify(ME, null, 2));
+    toast("Details copied to clipboard!");
+  }
+});
+
+// Initial Render
+render(true);
+</script>
+</body>
+</html>
