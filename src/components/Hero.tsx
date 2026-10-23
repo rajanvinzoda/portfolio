@@ -135,7 +135,7 @@ export const Hero: React.FC<HeroProps> = ({ headline, sub, scrollVel, hue, githu
 
       {/* Interactive hints */}
       <div className="hidden sm:block absolute left-4 sm:left-8 md:left-12 bottom-[calc(26px+env(safe-area-inset-bottom,0px))] text-xs text-[#a7a3c0]/80">
-        Move your cursor across text. Click anywhere for sparks. Use the dock below to explore.
+        Move your cursor across text. Click anywhere for sparks. Explore projects and interactive tools below.
       </div>
 
       {/* Bobbing scroll indicator */}

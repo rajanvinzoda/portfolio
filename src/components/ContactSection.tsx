@@ -1,15 +1,18 @@
 import React, { useRef, useState } from 'react';
-import { SocialLink } from '../data/portfolioData.ts';
+import { PortfolioData, SocialLink } from '../data/portfolioData.ts';
+import { InteractiveDock } from './InteractiveDock.tsx';
 
 interface ContactSectionProps {
   email: string;
   links: SocialLink[];
+  portfolioData: PortfolioData;
   onShowToast: (msg: string) => void;
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({
   email,
   links,
+  portfolioData,
   onShowToast,
 }) => {
   const mailRef = useRef<HTMLAnchorElement | null>(null);
@@ -105,22 +108,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         (Click email to instantly copy to clipboard)
       </div>
 
-      {/* Social / Direct Action Links */}
-      <div className="flex flex-wrap justify-center items-center gap-2.5 sm:gap-3.5 mt-8">
-        {links.map((link, idx) => (
-          <a
-            key={idx}
-            href={link.h}
-            target={link.h.startsWith('http') ? '_blank' : undefined}
-            rel={link.h.startsWith('http') ? 'noreferrer' : undefined}
-            className="rip relative overflow-hidden px-5 py-2.5 rounded-full border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.04)] text-xs sm:text-sm font-semibold text-[#f5f3ff] hover:bg-[linear-gradient(100deg,var(--p4),var(--p1),var(--p2),var(--p3),var(--p4))] hover:bg-[length:300%_100%] hover:text-[#0a0814] hover:animate-[flow_3s_linear_infinite] hover:-translate-y-1 hover:scale-105 transition-all"
-          >
-            {link.t} {link.h.startsWith('http') ? '↗' : ''}
-          </a>
-        ))}
+      {/* Replaced Image 2 with Image 1: The Interactive Spring Dock directly in-page */}
+      <InteractiveDock portfolioData={portfolioData} />
+
+      {/* Secondary Quick Action Pills from Image 2 */}
+      <div className="flex flex-wrap justify-center items-center gap-2.5 sm:gap-3.5 mt-4">
+        <a
+          href="#contact"
+          className="rip px-4 py-2 rounded-full border border-white/10 bg-white/5 text-xs font-semibold text-[#f5f3ff] hover:bg-white/12 hover:-translate-y-0.5 transition-all"
+        >
+          Resume ↗
+        </a>
         <button
           onClick={() => setShowQuickForm(!showQuickForm)}
-          className="rip px-5 py-2.5 rounded-full border border-[#7c5cff]/40 bg-[#7c5cff]/15 text-xs sm:text-sm font-semibold text-[#22d3ee] hover:bg-[#7c5cff]/30 transition-all hover:-translate-y-1"
+          className="rip px-4 py-2 rounded-full border border-[#7c5cff]/40 bg-[#7c5cff]/15 text-xs font-semibold text-[#22d3ee] hover:bg-[#7c5cff]/30 transition-all hover:-translate-y-0.5 cursor-pointer"
         >
           {showQuickForm ? '✕ Close Quick Note' : '✉ Send a Quick Note'}
         </button>

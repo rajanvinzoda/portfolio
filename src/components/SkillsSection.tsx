@@ -98,6 +98,93 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({
         </div>
       </div>
 
+      {/* Feature 3: Interactive System Architecture & Data Flow */}
+      <div className="mb-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-[#110f1c]/95 to-[#0c0a16]/98 border border-white/10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.7)]">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-widest text-[#22d3ee] mb-1 block">
+              System Architecture Visualizer
+            </span>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+              Production Clean Architecture & Data Flow
+            </h3>
+          </div>
+          <span className="text-[11px] font-mono text-[#a7a3c0] px-3 py-1 rounded-full bg-white/5 border border-white/10 self-start sm:self-auto">
+            Unidirectional Data Flow (UDF)
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="p-4 rounded-2xl bg-white/[0.025] border border-white/10 hover:border-[#22d3ee]/60 transition-all flex flex-col justify-between group">
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-bold text-white group-hover:text-[#22d3ee] transition-colors">UI & Presentation</span>
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#22d3ee]/20 text-[#22d3ee]">Declarative</span>
+              </div>
+              <p className="text-xs text-[#a7a3c0] leading-relaxed mb-3">
+                Jetpack Compose & React 19 state hoisting with 120fps recomposition isolation.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-1 text-[10px] font-mono text-white/70">
+              <span className="px-1.5 py-0.5 rounded bg-white/5">Compose</span>
+              <span className="px-1.5 py-0.5 rounded bg-white/5">React 19</span>
+              <span className="px-1.5 py-0.5 rounded bg-white/5">Canvas</span>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-white/[0.025] border border-white/10 hover:border-[#7c5cff]/60 transition-all flex flex-col justify-between group">
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-bold text-white group-hover:text-[#7c5cff] transition-colors">Reactive StateFlow</span>
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#7c5cff]/20 text-[#7c5cff]">UDF</span>
+              </div>
+              <p className="text-xs text-[#a7a3c0] leading-relaxed mb-3">
+                Immutable ViewModels exposing StateFlow streams across Coroutine dispatchers.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-1 text-[10px] font-mono text-white/70">
+              <span className="px-1.5 py-0.5 rounded bg-white/5">StateFlow</span>
+              <span className="px-1.5 py-0.5 rounded bg-white/5">Coroutines</span>
+              <span className="px-1.5 py-0.5 rounded bg-white/5">Hooks</span>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-white/[0.025] border border-white/10 hover:border-[#ff4d8d]/60 transition-all flex flex-col justify-between group">
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-bold text-white group-hover:text-[#ff4d8d] transition-colors">Domain & Repo</span>
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#ff4d8d]/20 text-[#ff4d8d]">SSOT</span>
+              </div>
+              <p className="text-xs text-[#a7a3c0] leading-relaxed mb-3">
+                Single Source of Truth mediating network and cache with offline-first policy.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-1 text-[10px] font-mono text-white/70">
+              <span className="px-1.5 py-0.5 rounded bg-white/5">Repository</span>
+              <span className="px-1.5 py-0.5 rounded bg-white/5">Offline-1st</span>
+              <span className="px-1.5 py-0.5 rounded bg-white/5">UseCases</span>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-white/[0.025] border border-white/10 hover:border-[#a3e635]/60 transition-all flex flex-col justify-between group">
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-bold text-white group-hover:text-[#a3e635] transition-colors">Data & Cloud</span>
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#a3e635]/20 text-[#a3e635]">Persistence</span>
+              </div>
+              <p className="text-xs text-[#a7a3c0] leading-relaxed mb-3">
+                SQLite Room database, Retrofit/Ktor HTTP clients, and Firebase real-time sync.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-1 text-[10px] font-mono text-white/70">
+              <span className="px-1.5 py-0.5 rounded bg-white/5">Room DB</span>
+              <span className="px-1.5 py-0.5 rounded bg-white/5">Ktor</span>
+              <span className="px-1.5 py-0.5 rounded bg-white/5">Firebase</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         {/* Left Column: Skills Categories */}
         <div className="lg:col-span-7 space-y-6">

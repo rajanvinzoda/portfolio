@@ -6,10 +6,10 @@ import { Hero } from './components/Hero.tsx';
 import { Marquee } from './components/Marquee.tsx';
 import { ProjectsSection } from './components/ProjectsSection.tsx';
 import { ProjectModal } from './components/ProjectModal.tsx';
+import { ResumeModal } from './components/ResumeModal.tsx';
 import { SkillsSection } from './components/SkillsSection.tsx';
 import { AboutSection } from './components/AboutSection.tsx';
 import { ContactSection } from './components/ContactSection.tsx';
-import { InteractiveDock } from './components/InteractiveDock.tsx';
 import { LiveEditDrawer } from './components/LiveEditDrawer.tsx';
 
 export default function App() {
@@ -29,6 +29,7 @@ export default function App() {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isEditOpen, setIsEditOpen] = useState<boolean>(false);
+  const [isResumeOpen, setIsResumeOpen] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [scrollVel, setScrollVel] = useState<number>(0);
   const [hue, setHue] = useState<number>(0);
@@ -141,6 +142,7 @@ export default function App() {
       <Navigation
         name={data.name}
         onOpenEdit={() => setIsEditOpen(true)}
+        onOpenResume={() => setIsResumeOpen(true)}
         onOpenContact={() => {
           const el = document.getElementById('contact');
           el?.scrollIntoView({ behavior: 'smooth' });
@@ -194,6 +196,7 @@ export default function App() {
         <ContactSection
           email={data.email}
           links={data.links}
+          portfolioData={data}
           onShowToast={showToast}
         />
       </main>
@@ -202,10 +205,15 @@ export default function App() {
       <ProjectModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
+        onOpenResume={() => setIsResumeOpen(true)}
       />
 
-      {/* Floating Interactive Dock */}
-      <InteractiveDock portfolioData={data} />
+      {/* 1-Page Printable Resume Modal */}
+      <ResumeModal
+        isOpen={isResumeOpen}
+        onClose={() => setIsResumeOpen(false)}
+        data={data}
+      />
 
       {/* Floating Edit Details Button */}
       <button

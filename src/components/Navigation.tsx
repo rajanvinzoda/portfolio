@@ -5,9 +5,10 @@ interface NavigationProps {
   onOpenEdit: () => void;
   onOpenContact: () => void;
   onOpenCommandMenu?: () => void;
+  onOpenResume?: () => void;
 }
 
-export const Navigation: React.FC<NavigationProps> = ({ name, onOpenEdit, onOpenContact, onOpenCommandMenu }) => {
+export const Navigation: React.FC<NavigationProps> = ({ name, onOpenEdit, onOpenContact, onOpenCommandMenu, onOpenResume }) => {
   const [activeSection, setActiveSection] = useState<string>('work');
   const [isHeaderHidden, setIsHeaderHidden] = useState<boolean>(false);
   const indRef = useRef<HTMLSpanElement | null>(null);
@@ -182,6 +183,16 @@ export const Navigation: React.FC<NavigationProps> = ({ name, onOpenEdit, onOpen
           <span>✎</span>
           <span>Edit details</span>
         </button>
+        {onOpenResume && (
+          <button
+            onClick={onOpenResume}
+            className="rip inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-[#f5f3ff] bg-[rgba(255,255,255,0.06)] hover:bg-[rgba(255,255,255,0.14)] border border-[rgba(255,255,255,0.1)] transition-transform hover:-translate-y-0.5 whitespace-nowrap"
+            title="View 1-Page Printable Resume"
+          >
+            <span>📄</span>
+            <span>Resume</span>
+          </button>
+        )}
         <button
           onClick={onOpenContact}
           className="rip px-4 py-1.5 rounded-full text-xs md:text-sm font-bold text-[#0a0814] bg-[linear-gradient(100deg,var(--p4),var(--p1),var(--p2),var(--p3),var(--p4))] bg-[length:300%_100%] animate-[flow_4s_linear_infinite] hover:scale-105 active:scale-95 transition-transform whitespace-nowrap shadow-[0_4px_20px_-4px_rgba(124,92,255,0.4)]"

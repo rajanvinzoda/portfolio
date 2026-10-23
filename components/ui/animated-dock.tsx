@@ -25,6 +25,7 @@ export interface AnimatedDockProps {
 export interface DockItemData {
   link: string;
   Icon: React.ReactNode;
+  title?: string;
   target?: string;
   onClick?: (e: React.MouseEvent) => void;
 }
@@ -34,20 +35,21 @@ export const AnimatedDock = ({ className, items }: AnimatedDockProps) => {
  
   return (
     <motion.div
-      onMouseMove={(e) => mouseX.set(e.pageX)}
+      onMouseMove={(e) => mouseX.set(e.clientX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto flex h-16 items-end gap-4 rounded-2xl bg-secondary/50 border border-primary/10 shadow-md px-4 pb-3",
+        "relative mx-auto flex h-18 items-center gap-3.5 rounded-full bg-[#110f1c]/92 border border-white/12 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.8)] backdrop-blur-xl px-5 py-2",
         className,
       )}
     >
       {items.map((item, index) => (
-        <DockItem key={index} mouseX={mouseX}>
+        <DockItem key={index} mouseX={mouseX} title={item.title}>
           <Link
             href={item.link}
             target={item.target}
             onClick={item.onClick}
-            className="grow flex items-center justify-center w-full h-full text-primary-foreground"
+            title={item.title}
+            className="grow flex items-center justify-center w-full h-full text-white"
           >
             {item.Icon}
           </Link>
@@ -59,10 +61,11 @@ export const AnimatedDock = ({ className, items }: AnimatedDockProps) => {
  
 interface DockItemProps {
   mouseX: MotionValue<number>;
+  title?: string;
   children: React.ReactNode;
 }
  
-export const DockItem = ({ mouseX, children }: DockItemProps) => {
+export const DockItem = ({ mouseX, title, children }: DockItemProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const distance = useTransform(mouseX, (val) => {
@@ -70,25 +73,26 @@ export const DockItem = ({ mouseX, children }: DockItemProps) => {
     return val - bounds.x - bounds.width / 2;
   });
 
-  const widthSync = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
+  const widthSync = useTransform(distance, [-140, 0, 140], [44, 68, 44]);
   const width = useSpring(widthSync, {
     mass: 0.1,
-    stiffness: 150,
-    damping: 12,
+    stiffness: 170,
+    damping: 14,
   });
 
-  const iconScale = useTransform(width, [40, 80], [1, 1.5]);
+  const iconScale = useTransform(width, [44, 68], [1, 1.35]);
   const iconSpring = useSpring(iconScale, {
     mass: 0.1,
-    stiffness: 150,
-    damping: 12,
+    stiffness: 170,
+    damping: 14,
   });
 
   return (
     <motion.div
       ref={ref}
-      style={{ width }}
-      className="aspect-square w-10 rounded-full bg-primary text-secondary-foreground flex items-center justify-center"
+      style={{ width, height: width }}
+      title={title}
+      className="aspect-square rounded-full bg-[#7c5cff] text-white flex items-center justify-center shadow-[0_4px_14px_rgba(124,92,255,0.4)] hover:shadow-[0_10px_25px_rgba(124,92,255,0.7)] transition-shadow cursor-pointer select-none"
     >
       <motion.div
         style={{ scale: iconSpring }}
